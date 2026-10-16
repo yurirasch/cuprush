@@ -1,0 +1,14 @@
+.git
+.gitignore
+.env
+.env.*
+!.env.example
+cuprush-data.json
+data
+node_modules
+*.log
+assets
+index.template.html
+embed_assets.py
+README.md
+CODEX.md

@@ -1,0 +1,10 @@
+{
+  "name": "cuprush-online",
+  "version": "1.0.0",
+  "private": true,
+  "description": "CupRush jogo 1p CPU e 2p online com amigos",
+  "main": "server.js",
+  "engines": {"node": ">=18"},
+  "scripts": {"start": "node server.js", "check": "node --check server.js"},
+  "dependencies": {}
+}

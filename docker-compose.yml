@@ -1,0 +1,21 @@
+services:
+  cuprush:
+    build: .
+    container_name: cuprush-online
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:${HOST_PORT:-3000}:3000"
+    environment:
+      PORT: "3000"
+      DATA_PATH: "/data/cuprush-data.json"
+      ALLOWED_ORIGINS: "${ALLOWED_ORIGINS:?Defina ALLOWED_ORIGINS em .env}"
+    volumes:
+      - ./data:/data
+    security_opt:
+      - no-new-privileges:true
+    healthcheck:
+      test: ["CMD","node","-e","require('http').get('http://127.0.0.1:3000/health',r=>process.exit(r.statusCode===200?0:1)).on('error',()=>process.exit(1))"]
+      interval: 30s
+      timeout: 3s
+      retries: 3
+      start_period: 15s

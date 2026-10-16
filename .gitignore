@@ -1,0 +1,21 @@
+# Tokens e dados de jogadores
+cuprush-data.json
+cuprush-data.json.*
+data/
+*.sqlite
+*.db
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.token
+secrets/
+node_modules/
+.npm/
+*.log
+coverage/
+.DS_Store
+Thumbs.db
